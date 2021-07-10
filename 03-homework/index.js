@@ -60,11 +60,11 @@ accountDom.addEventListener('change', (event)=>{
 */
 
 //zaman sayaci
-let timeleft = 120;
+let timeleft = 120;//saniye
 let countDown = setInterval(function () {
-  timeleft--;
+  timeleft--;// tek tek azalt
   document.querySelector("#countdowntimer").textContent = timeleft;
-  if (timeleft <= 0) {
+  if (timeleft <= 0) { //0'a kucuk veya esit oldugunda sayfayı yenile
   clearInterval('countdown');
   window.location.reload();
 }}, 1000);

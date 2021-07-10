@@ -51,13 +51,7 @@ inputDom.addEventListener("change", function(){
   }
 });
 });
-/*
-accountDom.addEventListener('change', (event)=>{
-  const result = document.querySelector('.result');
-  result.textContent=`Bu hesaptaki bakiyeniz ${event.target.value} TL'dir. Maksimum göndereceğiniz miktar ${event.target.value} TL'dir.`
 
-});
-*/
 
 //zaman sayaci
 let timeleft = 120;//saniye

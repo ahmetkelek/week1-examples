@@ -20,7 +20,7 @@ let balance=0;
 
 const accountDOM=document.querySelector('.form-control');
 const inputDom=document.querySelector('#moneyQuantity');
-const gonderButton=document.querySelector("#gonder")
+const sendButton=document.querySelector("#sendButton")
 const receivedSms=document.querySelector('#received')
 
 
@@ -45,7 +45,7 @@ inputDom.addEventListener("change", function(){
   sendMoney = Number(this.value);
   if(sendMoney > balance){
     document.getElementById("gonder").disabled = true;
-      alert("Bakiyenizde o kadar para yok.")
+      alert("Bakiyenizde o kadar para yok.") //gonderilen para bakiyeden fazla ise uyari ver.
   }else{
     document.getElementById("gonder").disabled = false;
   }
@@ -72,14 +72,10 @@ let countDown = setInterval(function () {
 
 
 
-
-
-
-
-gonderButton.addEventListener('click',(e)=>{
+sendButton.addEventListener('click',(e)=>{
   e.preventDefault();
   if(sendMoney<500){
-    alert('Başarılı');
+    alert('Başarılı'); 
   }
   else{
     receivedSms.style.display='block';
@@ -87,15 +83,15 @@ gonderButton.addEventListener('click',(e)=>{
       if(e.key=="Enter"){
         e.preventDefault;
         if(receivedSms.value==='1234'){
-          alert('Başarılı');
+          alert('Başarılı'); // Şifre 1234 girilirse başarılı uyarisi versin
         }
         else{
           if(count < 4){
             count++;
             alert('Şifre Yanlış!');
-            return;
+            return; // Sifreyi max 3 kez yanlis girsin.
           }else{
-            alert('Hesabınız bloke oldu');
+            alert('Hesabınız bloke oldu'); //4 olursa hesabi bloke et uyarisi versin
           }
         }
       }
